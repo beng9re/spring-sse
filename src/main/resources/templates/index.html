@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+
+</body>
+<script>
+    // 이벤트 소스로 SSE 클라이언트 제작
+    const eventSrouce = new EventSource("http://localhost:8080/")
+    eventSrouce.onmessage = (e) => {
+        document.querySelector("body").innerHTML += e.data;
+    }
+</script>
+</html>
